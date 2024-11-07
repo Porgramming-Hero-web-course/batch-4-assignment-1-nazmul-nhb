@@ -6,10 +6,10 @@
 
 Type guards are necessary in TypeScript because -
 
-- **Improved Type Safety**: TypeScript provide static type checking, meaning types a re checked at compile time. Type guards ensure that operations (functions/methods) are performed only on valid and expected types, which further helps avoid runtime errors.
-- **Correct Data Flow**: Type guards ensure that the data flows relies in correct types.
-- **Prevent Incorrect Parameter Passing**: When applied type guards in a function and later that function is called/invoked incorrect types parameters will not be permeable to pass as parameters.
-- **Reliable Code**: The code will be safe and reliable by using type guards properly.
+- **Improve Type Safety**: TypeScript provides static type checking, meaning types are checked at compile time. Type guards ensure that operations are performed only on valid and expected types, helping to avoid runtime errors.
+- **Enforce Correct Data Flow**: Type guards verify that data remains in its expected type throughout code execution, preventing unexpected type mismatches.
+- **Prevent Incorrect Parameter Passing**: When type guards are implemented within functions, they enforce that only parameters of expected types can be passed in.
+- **Ensure Reliable Code**: Using type guards effectively makes code safer and more predictable, reducing the chance of unexpected errors.
 
 ## Various Types of Type Guards and Their Use Cases
 
@@ -44,7 +44,7 @@ In the example above `add` function accepts the parameter `x` and `y` as `number
 
 ### `in` guard
 
-The `in` operator (type guard) checks if an object as the specific property. It is usually used to differentiate between objects with optional properties. Basic syntax for using `in` operator is `property in object`.
+The `in` operator checks if an object has a specific property, making it useful for distinguishing between objects with optional or unique properties. This guard is particularly helpful in union types, where some types may contain a certain property, and others may not. Basic syntax for using `in` operator is `property in object`.
 
 Example:
 
@@ -74,7 +74,7 @@ Example:
  getUser(specialUser);
 ```
 
-In the example above, we are checking for role of a user based on type alias `NormalUser` and `AdminUser`. We know that property `role` only exists in type `AdminUser`. so we're logging it as Admin. We are doing otherwise if `role` property does not exist in `user`.
+In the example above, we are checking for role of a user based on type alias `NormalUser` and `AdminUser`. We know that property `role` only exists in type `AdminUser`. so we're logging it as admin. We are doing otherwise if `role` property does not exist in `user`.
 
 ### `instanceof` guard
 
@@ -109,7 +109,7 @@ In the above example `Dog` is an extension of class `Animal`. in function `callA
 
 ### `is` guard
 
-The `is` operator is used to check type of a certain value similar to `instanceof`. Sometimes it can be a tool to handle `instanceof` guard more effectively. Using the `is` operator we can create functions to check types. The function takes an argument and checks if it matches a certain type (basic types/aliases/interfaces/classes). The function returns boolean, which can later help to narrow down types of a specific type. The basic syntax is `x is type`, where `x` is a variable and `type` is the specific type to check.
+The `is` operator is used to check type of a certain value similar to `instanceof`. Sometimes it can be a tool to handle `instanceof` guard more effectively. Using the `is` operator we can create functions to check types. The function takes an argument and checks if it matches a certain type (basic types/aliases/interfaces/classes). The function returns boolean, which can later help to narrow down types of a specific type. The basic syntax is `x is type`, where `x` is a variable and `type` is the specific type to check. `is` guards can be more versatile than `instanceof` because they work with interfaces and custom type aliases, not just classes.
 
 Example:
 
@@ -141,4 +141,4 @@ function callAnimal(animal: Animal) {
 
 The above example is similar to the example used in `instanceof` but we are using a custom type checker function `isDog` (Type Predicate) to check the type of `animal` object. We combined `instance` of with `is` here.
 
-**Conclusion**: Type guards are powerful tools for writing safe and readable code in TypeScript. These allow developers to handle types within a specific scope which reduces runtime errors and facilitate better intellisense from Code Editor(s). Applying type guards in complex `TypeScript` project can make codebase reliable and easier to maintain and understand.
+**Conclusion**: Type guards are powerful tools in `TypeScript` that improve code safety, readability, and maintainability. They allow developers to confidently handle multiple types within a specific scope, reducing runtime errors and enabling enhanced code intellisense in editors. Properly applying type guards in a complex `TypeScript` project can lead to a more reliable, maintainable, and understandable codebase.
