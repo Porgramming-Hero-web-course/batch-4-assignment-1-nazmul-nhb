@@ -10,4 +10,4 @@ const sumArray: SumArray = (numbers) => {
 	return numbers.reduce((acc, number) => acc + number, 0);
 };
 
-console.log(sumArray([1, 2, 3, 4, 5]));
+// console.log(sumArray([1, 2, 3, 4, 5]));
