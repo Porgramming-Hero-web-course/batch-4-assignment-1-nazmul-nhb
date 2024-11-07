@@ -3,7 +3,7 @@ type RemoveDuplicates = (numbers: number[]) => number[];
 
 /**
  *
- * @param numbers - Accepts an array of numbers only.
+ * @param numbers Accepts an array of numbers only.
  * @returns Returns a new array with duplicates removed.
  */
 const removeDuplicates: RemoveDuplicates = (numbers) => {
@@ -24,4 +24,5 @@ const removeDuplicates: RemoveDuplicates = (numbers) => {
 	return cleanArr;
 };
 
+// Sample Input:
 // console.log(removeDuplicates([1,1]));
