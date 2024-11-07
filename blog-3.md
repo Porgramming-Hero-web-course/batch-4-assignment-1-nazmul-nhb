@@ -13,12 +13,12 @@ Type guards are necessary in TypeScript because -
 
 ## Various Types of Type Guards and Their Use Cases
 
-- [`typeof` operator](#typeof-operator)
-- [`in` operator](#in-operator)
-- [`instanceof` operator](#instanceof-operator)
-- [`is` operator](#is-operator)
+- [`typeof` guard](#typeof-guard)
+- [`in` guard](#in-guard)
+- [`instanceof` guard](#instanceof-guard)
+- [`is` guard](#is-guard)
 
-### typeof operator
+### `typeof` guard
 
 typeof guard checks the type (of a variable or expression) using the `typeof` operator from `JavaScript`. It is used to narrow down the type of a variable to one of the primitive types in `JavaScript` (`string`, `number`, `boolean`, `symbol`, and `undefined`).
 
@@ -42,7 +42,7 @@ Example:
 
 In the example above `add` function accepts the parameter `x` and `y` as `number` or `string` types. When the type of `x` and `y` both are number we are simple returning the sum of `x` and `y`. Else we are returning a simple statement in string.
 
-### `in` operator
+### `in` guard
 
 The `in` operator (type guard) checks if an object as the specific property. It is usually used to differentiate between objects with optional properties. Basic syntax for using `in` operator is `property in object`.
 
@@ -76,7 +76,7 @@ Example:
 
 In the example above, we are checking for role of a user based on type alias `NormalUser` and `AdminUser`. We know that property `role` only exists in type `AdminUser`. so we're logging it as Admin. We are doing otherwise if `role` property does not exist in `user`.
 
-### `instanceof` operator
+### `instanceof` guard
 
 The `instanceof` operator is used to check if an object is an instance of a particular class. Then we will perform our operations based on the return value.
 
@@ -107,7 +107,7 @@ function callAnimal(animal: Animal) {
 
 In the above example `Dog` is an extension of class `Animal`. in function `callAnimal` we are accepting any object of class `Animal` and then checking if the object `animal` is an instance of `Dog`; if the result is true, we are calling `bark` method from `Dog` class, otherwise we are calling the common method `makeSound`.
 
-### `is` operator
+### `is` guard
 
 The `is` operator is used to check type of a certain value similar to `instanceof`. Sometimes it can be a tool to handle `instanceof` guard more effectively. Using the `is` operator we can create functions to check types. The function takes an argument and checks if it matches a certain type (basic types/aliases/interfaces/classes). The function returns boolean, which can later help to narrow down types of a specific type. The basic syntax is `x is type`, where `x` is a variable and `type` is the specific type to check.
 
