@@ -15,11 +15,6 @@ type CircleOrRectangle = Circle | Rectangle;
 // define function type
 type CalculateArea = (shape: CircleOrRectangle) => number;
 
-/**
- *
- * @param shape Accepts only shapes that matches either Circle or Rectangle.
- * @returns Returns calculated area of the shape provided.
- */
 const calculateShapeArea: CalculateArea = (shape) => {
 	let area: number = 0;
 
@@ -32,13 +27,3 @@ const calculateShapeArea: CalculateArea = (shape) => {
 
 	return Number(area.toFixed(2));
 };
-
-// Sample Input:
-// console.log(calculateShapeArea({ shape: 'circle', radius: 5 }));
-// console.log(
-// 	calculateShapeArea({
-// 		shape: 'rectangle',
-// 		width: 4,
-// 		height: 6,
-// 	}),
-// );

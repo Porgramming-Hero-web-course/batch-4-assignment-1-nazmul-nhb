@@ -1,17 +1,8 @@
 // define function type
 type RemoveDuplicates = (numbers: number[]) => number[];
 
-/**
- *
- * @param numbers Accepts an array of numbers only.
- * @returns Returns a new array with duplicates removed.
- */
 const removeDuplicates: RemoveDuplicates = (numbers) => {
 	if (numbers.length <= 1) return numbers;
-
-	// Could have done it in 2 lines using Set
-	// const cleanArr = new Set(numbers);
-	// return Array.from(cleanArr);
 
 	const cleanArr: number[] = [];
 
@@ -23,6 +14,3 @@ const removeDuplicates: RemoveDuplicates = (numbers) => {
 
 	return cleanArr;
 };
-
-// Sample Input:
-// console.log(removeDuplicates([1,1]));
