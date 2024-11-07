@@ -7,7 +7,11 @@ type RemoveDuplicates = (numbers: number[]) => number[];
  * @returns Returns a new array with duplicates removed.
  */
 const removeDuplicates: RemoveDuplicates = (numbers) => {
-	// Could have done it in 1 line using Set
+	if (numbers.length <= 1) return numbers;
+
+	// Could have done it in 2 lines using Set
+	// const cleanArr = new Set(numbers);
+	// return Array.from(cleanArr);
 
 	const cleanArr: number[] = [];
 
@@ -20,4 +24,4 @@ const removeDuplicates: RemoveDuplicates = (numbers) => {
 	return cleanArr;
 };
 
-// console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));
+// console.log(removeDuplicates([1,1]));
