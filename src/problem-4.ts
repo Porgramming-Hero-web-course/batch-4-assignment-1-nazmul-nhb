@@ -21,6 +21,7 @@ const calculateShapeArea: CalculateArea = (shape) => {
 	if (shape.shape === 'circle') {
 		area = Math.PI * shape.radius * shape.radius;
 	}
+
 	if (shape.shape === 'rectangle') {
 		area = shape.width * shape.height;
 	}
